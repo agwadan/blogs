@@ -1,9 +1,12 @@
 const express = require('express');
 const { randomBytes } = require('crypto');
+const cors = require('cors');
+
 const app = express();
 const PORT = 4000;
-app.use(express.json());
 
+app.use(express.json());
+app.use(cors());
 const posts = {};
 
 app.get('/posts', (req, res) => {
