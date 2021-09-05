@@ -1,7 +1,7 @@
 const express = require('express');
 const { randomBytes } = require('crypto');
 const app = express();
-
+const PORT = 4000;
 app.use(express.json());
 
 const posts = {};
@@ -19,4 +19,4 @@ app.post('/posts', (req, res) => {
   res.status(201).send(posts[id]); //res "201" for a new resource created
 });
 
-app.listen(4000, () => { console.log(`Posts listening at port 4000`) });
+app.listen(PORT, () => { console.log(`Posts listening at port ${PORT}`) });
