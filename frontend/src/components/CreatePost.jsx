@@ -9,6 +9,7 @@ export const CreatePost = () => {
     e.preventDefault();
     await axios.post('http://localhost:4000/posts', { title });
     setTitle('');
+    window.location.reload();
   }
 
   return (
