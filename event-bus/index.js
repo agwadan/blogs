@@ -8,9 +8,12 @@ const PORT = 4005;
 app.use(express.json());
 /* app.use(cors()); */
 
+const events = [];
+
 app.post('/events', (req, res) => {
   const event = req.body;
-  console.log(event);
+
+  events.push(event);
 
   axios.post(`http://localhost:4000/events`, event); //--------------> Posts
   axios.post(`http://localhost:4001/events`, event); //--------------> Comments 
@@ -18,6 +21,10 @@ app.post('/events', (req, res) => {
   axios.post(`http://localhost:4003/events`, event); //--------------> Moderation
 
   res.send({ status: 'ok' });
+})
+
+app.get('/events', (req, res) => {
+  res.send(events);
 })
 
 app.listen(PORT, () => { console.log(`Event bus listening at port ${PORT}`); })
