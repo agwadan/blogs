@@ -2,10 +2,11 @@ const express = require('express');
 const { randomBytes } = require('crypto');
 const cors = require('cors');
 const axios = require('axios');
-
 const app = express();
 const PORT = 4001;
 
+
+/* --------MIDDLEWARE----------- */
 app.use(express.json());
 app.use(cors());
 
@@ -39,17 +40,12 @@ app.post('/posts/:id/comments', async (req, res) => {
 app.post('/events', async (req, res) => {
 
   try {
-
-
-
     console.log('Received event', req.body.type);
-
     const { type, data } = req.body;
 
     if (type === 'CommentModerated') {
       const { postId, id, status, content } = data;
       const comments = commentsByPostId[postId];
-
       const comment = comments.find(comment => {
         return comment.id === id;
       });
@@ -65,11 +61,10 @@ app.post('/events', async (req, res) => {
         }
       })
     }
-
     res.send('success :-)');
   } catch (e) {
     console.log(e);
   }
-})
+});
 
 app.listen(PORT, () => { console.log(`Comments listening at port: ${PORT}`) });

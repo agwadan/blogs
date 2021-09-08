@@ -2,12 +2,13 @@ const express = require('express');
 const { randomBytes } = require('crypto');
 const cors = require('cors');
 const axios = require('axios');
-
 const app = express();
 const PORT = 4000;
 
+/* ---------MIDDLEWARE---------- */
 app.use(express.json());
 app.use(cors());
+
 const posts = {};
 
 app.get('/posts', (req, res) => {
@@ -26,12 +27,12 @@ app.post('/posts', async (req, res) => {
     data: { id, title }
   })
 
-  res.status(201).send(posts[id]); //res "201" for a new resource created
+  res.status(201).send(posts[id]); //--------------- res "201" for a new resource created
 });
 
 app.post('/events', (req, res) => {
-  console.log('Received event', req.body.type);
-  res.send('success :-)')
-})
+  console.log('Received event  :', req.body.type);
+  res.send('success :-)');
+});
 
 app.listen(PORT, () => { console.log(`Posts listening at port ${PORT}`) });

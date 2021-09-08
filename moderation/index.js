@@ -2,6 +2,8 @@ const express = require('express');
 const axios = require('axios');
 const app = express();
 const PORT = 4003;
+
+/* ----------MIDDLEWARE--------- */
 app.use(express.json());
 
 app.post('/events', async (req, res) => {
@@ -20,7 +22,6 @@ app.post('/events', async (req, res) => {
     })
     console.log(`status ---> ${status}`);
   }
-
   res.send('success :-)');
 })
 

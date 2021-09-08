@@ -1,11 +1,6 @@
-import axios from 'axios';
-import React, { useState, useEffect } from 'react';
-
+import React from 'react';
 
 export const CommentList = ({ comments }) => {
-
-  console.log(comments);
-
 
   const renderedComments = comments.map(comment => {
     let content;
@@ -17,7 +12,6 @@ export const CommentList = ({ comments }) => {
       < li key={comment.id} >
         {content}
       </li >
-
     )
   })
 
