@@ -3,24 +3,21 @@ import React, { useState, useEffect } from 'react';
 
 
 export const CommentList = ({ comments }) => {
+
   console.log(comments);
 
-  /* const [comments, setComments] = useState([]);
-
-  const fetchData = async () => {
-    const res = await axios.get(`http://localhost:4001/posts/${postId}/comments`);
-    setComments(res.data);
-  }
-
-  useEffect(() => {
-    fetchData();
-  }, []); */
 
   const renderedComments = comments.map(comment => {
+    let content;
+
+    if (comment.status === 'approved') content = comment.content;
+    if (comment.status === 'pending') content = `Awaiting Moderation . . .`;
+    if (comment.status === 'rejected') content = `Comment Rejected . . .`;
     return (
-      <li key={comment.id}>
-        {comment.content}
-      </li>
+      < li key={comment.id} >
+        {content}
+      </li >
+
     )
   })
 
