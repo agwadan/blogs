@@ -7,8 +7,8 @@ There are four services: posts, comments, moderation and query. There is an even
 ## How To Run It
 
 ### Pre-requsites
-You need to have node installed on your local computer.
-The dependency "nodemon" should be installed globally for all node applications. You can also install it for each of the services. 
+* You need to have node installed on your local computer.
+* The dependency "nodemon" should be installed globally for all node applications. You can also install it for each of the services. 
 
 ### Steps
 1. Clone the repository.
