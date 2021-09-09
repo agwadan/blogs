@@ -15,9 +15,9 @@ The dependency "nodemon" should be installed globally for all node applications.
 2. You'll need to open each of the directories in the root with a terminal to use a shell of your choice i.e. you'll have 6 terminals running.
 
 3. In each of the shells, run one of the following commands depending on the package manager you use. The purpose of these commands is to install dependencies to run these services.
-* ```yarn add```
-* ```npm install```
+     * ```yarn add```
+     * ```npm install```
 
 4. After the installations, run one of the following commands to start the micro servers for each of the services.
-* ```yarn start```
-* ```npm start```
+     * ```yarn start```
+     * ```npm start```
