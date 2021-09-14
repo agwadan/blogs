@@ -20,6 +20,10 @@
   font-size: 1.5rem;
 }
 
+.spacer{
+  flex: 1;
+}
+
 .navbar-items ul{
   list-style: none;
   margin: 0;
