@@ -13,7 +13,8 @@ export const CreatePost = () => {
   }
 
   return (
-    <div>
+    <div className='create-post'>
+      <h2>Create Post</h2>
       <form onSubmit={onSubmit}>
         <div className="form-group">
           <label>Title</label>
