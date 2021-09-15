@@ -1,11 +1,12 @@
 import React from 'react';
 import './Navbar.css';
+import { DrawerButton } from '../SideDrawer/DrawerButton';
 
 const Navbar = () => {
   return (
     <header className='navbar'>
       <nav className='navbar-nav'>
-        <div></div>
+        <div><DrawerButton /></div>
         <div className='navbar-logo'><a href="/">BLOGS</a></div>
         <div className='spacer' />
         <div className='navbar-items'>
