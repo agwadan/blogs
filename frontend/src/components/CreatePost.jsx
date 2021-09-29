@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import './CreatePost.css';
 
 export const CreatePost = () => {
 
@@ -17,13 +18,13 @@ export const CreatePost = () => {
       <h2>Create Post</h2>
       <form onSubmit={onSubmit}>
         <div className="form-group">
-          <label>Title</label>
+          <label>Title   </label>
           <input
             className='form-control'
             value={title}
             onChange={e => setTitle(e.target.value)}
           />
-        </div>
+        </div> <br /><br /><br />
         <button>Submit</button>
       </form>
     </div>
